@@ -1,0 +1,17 @@
+service: ms-blueexpress-url-shortener
+
+plugins:
+  - serverless-offline
+  - serverless-dynamodb-local
+provider:
+  name: local
+  environment:
+    DYNAMODB_ENDPOINT: ${self:custom.endpoints.dynamodbURL}
+custom:
+  dynamodb:
+    stages:
+      - ${self:provider.stage}
+    start:
+      migrate: true
+  endpoints:
+    dynamodbURL: 'http://localhost:8000'
