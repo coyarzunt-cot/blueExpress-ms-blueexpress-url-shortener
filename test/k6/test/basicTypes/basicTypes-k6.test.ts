@@ -32,7 +32,7 @@ export const options = {
 export default function (params) {
   console.log('====TYPES=======> params', params);
 
-  let res = http.get(url + 'longUrl/zI44OkkXX7');
+  let res = http.get(url + 'longUrl/5zvpOb');   // id de url existente en dynamodb
   check(res, {
     'get longUrl is status 200': (r) => r.status === 200,
   });

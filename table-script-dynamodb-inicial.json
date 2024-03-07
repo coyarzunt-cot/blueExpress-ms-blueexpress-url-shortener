@@ -1,0 +1,16 @@
+{
+    "TableName": "blue-express-v1",
+    "KeySchema": [
+      {
+        "AttributeName": "urlId",
+        "KeyType": "HASH"
+      }
+    ],
+    "AttributeDefinitions": [
+      {
+        "AttributeName": "urlId",
+        "AttributeType": "S"
+      }
+    ],
+    "BillingMode": "PAY_PER_REQUEST"
+  }

@@ -25,7 +25,7 @@ export class UrlBlueExpressService {
       if (url) return url.shortUrl;
 
       const urlCode = nanoid(6);
-      const baseURL = 'http://localhost:3000/' + process.env.URL_BASE;
+      const baseURL = process.env.URL_BASE;
       const shortUrl = `${baseURL}/${urlCode}`;
 
       const urlBEInterface: UrlBEInterface = {
