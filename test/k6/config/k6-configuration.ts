@@ -1,17 +1,29 @@
 export const DATA_OPTIONS = {
   SIMPLE: {
-    iterations: 15000,
-    vus: 1,
-    maxDuration: '3m',
-    duration: '10m',
+    iterations: 1,
+    vus: 10,
+    maxDuration: '1m',
+    duration: '30s',
   },
   COMPLEX: {
-    //  iterations: 1,
-   // vus: 10,
-     rate: 20000,
-    //   timeUnit: '1s',
-    //   maxDuration: '1s',
-    duration: '5m',
+    discardResponseBodies: true,
+    scenarios: {
+      contacts: {
+        executor: 'constant-arrival-rate',
+  
+        // How long the test lasts
+        duration: '30s',
+  
+        // How many iterations per timeUnit
+        rate: 30,
+  
+        // Start `rate` iterations per second
+        timeUnit: '1s',
+  
+        // Pre-allocate VUs
+        preAllocatedVUs: 50,
+      },
+    },
   },
 };
 

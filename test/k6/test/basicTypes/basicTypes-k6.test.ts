@@ -1,7 +1,7 @@
 // @ts-ignore
 import http from 'k6/http';
 // @ts-ignore
-import { check } from 'k6';
+import { sleep, check } from 'k6';
 // @ts-ignore
 import { URL_BASE_DEVELOP, URL_BASE_LOCAL, DATA_OPTIONS } from '../../config/k6-configuration.ts';
 
@@ -29,11 +29,11 @@ export const options = {
   // maxDuration: DATA_OPTIONS[__ENV.performace.toUpperCase()]['maxDuration'],
 };
 
-export default function (params) {
-  console.log('====TYPES=======> params', params);
+export default function () { 
 
-  let res = http.get(url + 'longUrl/5zvpOb');   // id de url existente en dynamodb
+  let res = http.get(url + 'longUrl/sbH-sT');   // id de url existente en dynamodb
   check(res, {
     'get longUrl is status 200': (r) => r.status === 200,
   });
+  sleep(0.5);
 }

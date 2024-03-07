@@ -22,10 +22,10 @@
     "aws:db:create": "aws dynamodb create-table --cli-input-json file://table-script.json --endpoint-url http://localhost:8000",
     "aws:db:update": "aws dynamodb update-table --cli-input-json file://table-script.json --endpoint-url http://localhost:8000",
     "aws:db:list": "aws dynamodb list-tables --endpoint-url http://localhost:8000",
-    "k6-basicTypes-local-simple": "k6 run test/k6/test/basicTypes/basicTypes-k6.test.ts -e performace=SIMPLE -e environment=dev --insecure-skip-tls-verify --http-debug=full --no-summary --log-output=none ",
-    "k6-basicTypes-local-complex": "k6 run test/k6/test/basicTypes/basicTypes-k6.test.ts -e environment=local  -e performace=COMPLEX --insecure-skip-tls-verify --http-debug=full",
-    "k6-basicTypes-develop-simple": "k6 run test/k6/test/basicTypes/basicTypes-k6.test.ts -e performace=SIMPLE -e environment=develop --insecure-skip-tls-verify --http-debug=full --no-summary --log-output=none ",
-    "k6-basicTypes-develop-complex": "k6 run test/k6/test/basicTypes/basicTypes-k6.test.ts -e environment=develop  -e performace=COMPLEX --insecure-skip-tls-verify --http-debug=full",
+    "k6-local-simple": "k6 run test/k6/test/basicTypes/basicTypes-k6.test.ts -e performace=SIMPLE -e environment=dev --insecure-skip-tls-verify --http-debug=full --no-summary --log-output=none ",
+    "k6-local-complex": "k6 run test/k6/test/basicTypes/complexTypes-k6.test.ts -e environment=local  -e performace=COMPLEX --insecure-skip-tls-verify --http-debug=full",
+    "k6-develop-simple": "k6 run test/k6/test/basicTypes/basicTypes-k6.test.ts -e performace=SIMPLE -e environment=develop --insecure-skip-tls-verify  --log-output=none ",
+    "k6-develop-complex": "k6 run test/k6/test/basicTypes/complexTypes-k6.test.ts -e environment=develop  --insecure-skip-tls-verify",
     "k6-flows": "k6 run test/k6/test/flowTest-k6.ts -e performace=SIMPLE -e environment=local --insecure-skip-tls-verify --http-debug=full    "
    
   },
