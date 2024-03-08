@@ -24,7 +24,7 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+[Nest](https://github.com/nestjs/nest) Microservicio de comunicación con DynamoBD y que realiza un acortar de url web's
 
 ## Installation
 
@@ -45,17 +45,21 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+### DynamoDB Local
 
+## Se debe correr docker local
+  Se crear una imagen docker con el Dockerfile del repositorio
+
+  Luego levantar y dejar corriendo la imagen docker con Docker desktop o directamente en consola exponiendo el puerto 8000
+
+  Crear tablas en DynamoDB en loca se debe correr el comando 
 ```bash
-# unit tests
-$ npm run test
+$ npm run aws:db:create
+```
 
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+  En .env dejar variable 
+  ```bash
+$ IS_DDB_LOCAL = true
 ```
 
 ## Support
